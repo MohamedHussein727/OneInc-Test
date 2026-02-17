@@ -1,0 +1,16 @@
+@OneInc.Processing.Api_HostAddress = http://localhost:5107
+
+POST {{OneInc.Processing.Api_HostAddress}}/api/processing/jobs
+Content-Type: application/json
+
+{
+  "input": "Hello, World!"
+}
+
+###
+# Replace the GUID below with the returned jobId
+GET {{OneInc.Processing.Api_HostAddress}}/api/processing/jobs/00000000-0000-0000-0000-000000000000/stream
+
+###
+# Replace the GUID below with the returned jobId
+DELETE {{OneInc.Processing.Api_HostAddress}}/api/processing/jobs/00000000-0000-0000-0000-000000000000
